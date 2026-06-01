@@ -14,6 +14,7 @@ router.get('/products', listProducts);
 router.post('/products', verifyToken, authorizeRoles('admin'), createProduct);
 router.put('/products/:id', verifyToken, authorizeRoles('admin'), updateProduct);
 router.delete('/products/:id', verifyToken, authorizeRoles('admin'), deleteProduct);
-router.post('/orders', verifyToken, authorizeRoles('user', 'admin'), createOrder);
+// Orders should be created by regular users only; admins manage products but do not place orders
+router.post('/orders', verifyToken, authorizeRoles('user'), createOrder);
 
 module.exports = router;
