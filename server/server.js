@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api', productRoutes);
 
-const port = process.env.PORT || 3000;
+const port = process.env.BACKEND_PORT || 3000;
 
 connectDb()
     .then(() => {

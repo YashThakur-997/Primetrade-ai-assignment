@@ -1,4 +1,4 @@
-const API_BASE_URL = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_BASE) || 'http://localhost:3000/api'
+const API_BASE_URL = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_BASE)
 // Key used to persist the JWT in localStorage. Keep this consistent across client modules.
 const TOKEN_KEY = 'primetrade_auth_token'
 
