@@ -3,7 +3,7 @@
 })()
 
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import api from '@/services/api'
 import { useUser } from '@/context/UserContext'
 
@@ -40,15 +40,11 @@ export default function LoginPage() {
 					<div className="mb-3">
 						<input className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 					</div>
-					<div className="mb-4">
-						<label className="block text-sm font-medium mb-1">Sign in as:</label>
-						<select className="w-full px-3 py-2 border rounded" value={role} onChange={(e) => setRole(e.target.value)}>
-							<option value="user">User</option>
-							<option value="admin">Admin</option>
-						</select>
-					</div>
 					<button className="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700" type="submit">Sign in</button>
 				</form>
+				<div className="mt-4 text-center text-sm text-gray-600">
+					Don't have an account? <Link to="/register" className="text-indigo-600 hover:underline">Create one</Link>
+				</div>
 			</div>
 		</div>
 	)
